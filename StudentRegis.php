@@ -8,69 +8,117 @@
            background-color: #f2f2f2;
        }
        .container{
-           width: 500px;
+           width: 900px;
            margin: auto;
            background-color: white;
            padding: 20px;
-           border: 1px solid black;
+           border: 2px solid black;
        }
-       h2{
+       h1{
            text-align: center;
        }
-       input{
-           width: 100%;
-           padding: 8px;
-           margin-top: 5px;
-           margin-bottom: 10px;
-       }
-       select{
-           width: 100%;
-           padding: 8px;
-           margin-bottom: 10px;
-       }
-       .btn{
-           background-color: blue;
+       .section{
+           background-color: black;
            color: white;
-           border: none;
-           padding: 10px;
+           padding: 5px;
+           margin-top: 15px;
+       }
+       .line{
+           border-bottom: 1px solid black;
+           margin-top: 10px;
+           margin-bottom: 10px;
+       }
+       p{
+           font-size: 15px;
+       }
+       table{
+           width: 100%;
+       }
+       td{
+           padding: 5px;
        }
 </style>
 </head>
 <body>
 <div class="container">
-<h2>Student Registration Form</h2>
-<form method="POST">
-       Student Name:
-<input type="text" name="name">
-       Age:
-<input type="number" name="age">
-       Course:
-<input type="text" name="course">
-       Gender:
-<select name="gender">
-<option>Male</option>
-<option>Female</option>
-</select>
-       Address:
-<input type="text" name="address">
-<input type="submit" value="Register" class="btn">
-</form>
+<h1>Student Registration Form</h1>
 <?php
-   if($_SERVER["REQUEST_METHOD"] == "POST")
-   {
-       $name = $_POST['name'];
-       $age = $_POST['age'];
-       $course = $_POST['course'];
-       $gender = $_POST['gender'];
-       $address = $_POST['address'];
-       echo "<h3>Student Information</h3>";
-       echo "Name: " . strtoupper($name) . "<br>";
-       echo "Age: " . $age . "<br>";
-       echo "Course: " . strtoupper($course) . "<br>";
-       echo "Gender: " . $gender . "<br>";
-       echo "Address: " . ucwords($address) . "<br>";
-   }
+       $fullname = "Mathew Zachary Macalino";
+       $studentnumber = "2025-12345";
+       $course = "BS Information Technology";
+       $school = "FEU Institute of Technology";
+       $gender = "Male";
+       $birthdate = "January 1, 2005";
+       $address = "Quezon City";
+       $citizenship = "Filipino";
+       $skill1 = "HTML";
+       $skill2 = "CSS";
+       $skill3 = "PHP";
+       $skill4 = "C++";
    ?>
+<div class="section">
+       Student Information
+</div>
+<table>
+<tr>
+<td>Full Name:</td>
+<td><?php echo strtoupper($fullname); ?></td>
+</tr>
+<tr>
+<td>Student Number:</td>
+<td><?php echo $studentnumber; ?></td>
+</tr>
+<tr>
+<td>Course:</td>
+<td><?php echo strtoupper($course); ?></td>
+</tr>
+<tr>
+<td>Gender:</td>
+<td><?php echo $gender; ?></td>
+</tr>
+<tr>
+<td>Birth Date:</td>
+<td><?php echo $birthdate; ?></td>
+</tr>
+</table>
+<div class="section">
+       School Information
+</div>
+<table>
+<tr>
+<td>School:</td>
+<td><?php echo strtoupper($school); ?></td>
+</tr>
+<tr>
+<td>Address:</td>
+<td><?php echo strtoupper($address); ?></td>
+</tr>
+</table>
+<div class="section">
+       Background
+</div>
+<p>
+       I am a student interested in programming and web development.
+       I enjoy creating websites and systems using PHP and HTML.
+</p>
+<div class="section">
+       Skills
+</div>
+<ul>
+<li><?php echo $skill1; ?></li>
+<li><?php echo $skill2; ?></li>
+<li><?php echo $skill3; ?></li>
+<li><?php echo $skill4; ?></li>
+</ul>
+<div class="section">
+       Citizenship Information
+</div>
+<table>
+<tr>
+<td>Citizenship:</td>
+<td><?php echo $citizenship; ?></td>
+</tr>
+</table>
 </div>
 </body>
 </html>
